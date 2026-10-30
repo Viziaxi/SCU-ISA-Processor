@@ -25,25 +25,25 @@ module buf_exmem(
     input zero_in, neg_in,
     input [31:0] pc_sum_in,
     input [31:0] alu_res_in,
-    input [31:0] read1_in,
-    input [31:0] read2_in,
+    input [31:0] rs_in,
+    input [31:0] rd_in,
     output reg [31:0] pc_sum_out,
     output reg [31:0] alu_res_out,
-    output reg [31:0] read1_out,
-    output reg [31:0] read2_out
+    output reg [31:0] rs_out,
+    output reg [31:0] rd_out
     );
 
 always @ (negedge clk) begin
     if (reset) begin
         pc_sum_out <= 32'd0;
         alu_res_out <= 32'd0;
-        read1_out <= 32'd0;
-        read2_out <= 32'd0;
+        rs_out <= 32'd0;
+        rd_out <= 32'd0;
     end else begin
         pc_sum_out <= pc_sum_in;
         alu_res_out <= alu_res_in;
-        read1_out <= read1_in;
-        read2_out <= read2_in;
+        rs_out <= rs_in;
+        rd_out <= rd_in;
     end
 end
 
