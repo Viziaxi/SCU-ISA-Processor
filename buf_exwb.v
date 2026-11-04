@@ -22,27 +22,22 @@
 
 module buf_exwb(
     input clk, reset,
-    input zero_in, neg_in,
-    input [31:0] pc_sum_in,
+    input [31:0] mem_in,
     input [31:0] alu_res_in,
-    input [31:0] xrs_in,
     input [4:0] rd_in,
-    output reg [31:0] pc_sum_out,
+    output reg [31:0] mem_out,
     output reg [31:0] alu_res_out,
-    output reg [31:0] xrs_out,
     output reg [4:0] rd_out
     );
 
 always @ (negedge clk) begin
     if (reset) begin
-        pc_sum_out <= 32'd0;
+        mem_out <= 32'd0;
         alu_res_out <= 32'd0;
-        xrs_out <= 32'd0;
         rd_out <= 32'd0;
     end else begin
-        pc_sum_out <= pc_sum_in;
+        mem_out <= mem_in;
         alu_res_out <= alu_res_in;
-        xrs_out <= xrs_in;
         rd_out <= rd_in;
     end
 end
