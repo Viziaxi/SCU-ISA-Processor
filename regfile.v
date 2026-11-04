@@ -21,10 +21,10 @@
 
 
 module regfile(
-    output reg [31:0] rs_out, rt_out,
     input clk, wrt,
     input [5:0] rs, rt, rd,
-    input [31:0] data_in
+    input [31:0] data_in,
+    output reg [31:0] rs_out, rt_out
     );
 
 reg [31:0] data [63:0];

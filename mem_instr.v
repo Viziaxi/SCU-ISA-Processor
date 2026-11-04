@@ -21,9 +21,9 @@
 
 
 module mem_instr(
-    output reg [31:0] instr,
     input clk,
-    input [7:0] addr
+    input [7:0] addr,
+    output reg [31:0] instr
     );
 
 reg [31:0] data [255:0];

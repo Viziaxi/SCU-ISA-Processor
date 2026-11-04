@@ -21,9 +21,9 @@
 
 
 module mem_data(
-    output reg [31:0] data_out,
     input clk, read, wrt,
-    input [31:0] addr, data_in
+    input [31:0] addr, data_in,
+    output reg [31:0] data_out
     );
 
 reg [31:0] data [65535:0];
