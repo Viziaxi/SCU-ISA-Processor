@@ -21,11 +21,11 @@
 
 
 module alu(
-    output [31:0] out,
-    output z, n,
     input [31:0] a,
     input [31:0] b,
-    input add, neg, sub
+    input add, neg, sub,
+    output [31:0] out,
+    output z, n
     );
 
 wire nsub;
